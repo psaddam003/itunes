@@ -1,20 +1,22 @@
 <div class="main-content">
-  <div class="header-section">
-    <div class="menu-right">
-      <form class="navbar-form" role="search">
-        <div class="input-group add-on">
-          <input class="form-control" placeholder="Search" name="srch-term" #input type="text" (input)="searchList(input.value)">
+    <div class="header-section">
+        <div class="menu-right">
+            <form class="navbar-form" role="search">
+                <div class="input-group add-on">
+                    <input class="fa fa-search" class="form-control" placeholder="Search" name="srch-term" #input type="text" (input)="searchList(input.value)">
+                </div>
+            </form>
         </div>
-      </form>
     </div>
-  </div>
-  <div class="container">
-    <ng-container *ngFor="let song of songList;let i = index;">
-      <div class="col-md-3 browse-grid" (click)="playSong(song)">
-        <div><img src="{{song['im:image'][0]['label']}}"></div>
-        <div><i class="fa fa-play-circle"></i></div>
-        <div class="sing">{{song['title']['label']}}</div>
-      </div>
-    </ng-container>
-  </div>
+    <div class="container ">
+    
+        <ng-container *ngFor="let song of songList;let i = index;">
+            <div class="col-md-4 col-md-offset-2 browse-grid" (click)="playSong(song)">
+                <div><img src="{{song['im:image'][0]['label']}}"></div>
+<!--                 <a href="#"><i class="glyphicon glyphicon-play-circle"></i></a>-->
+               
+                <div class="sing">{{song['title']['label']}}</div>
+            </div>
+        </ng-container>
+    </div>
 </div>
